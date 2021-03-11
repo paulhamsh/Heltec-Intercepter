@@ -2,7 +2,7 @@
 
 See Stick Intercepter for details    
 
-![Spark Setups](https://github.com/paulhamsh/Stick-Intercepter/blob/main/M5Sticks.jpg)
+![Spark Setups](https://github.com/paulhamsh/Heltec-Intercepter/blob/main/HeltecConnections.jpg)
 
 
 ```
