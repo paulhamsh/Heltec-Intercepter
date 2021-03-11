@@ -22,8 +22,8 @@ As with all Arduino GUI code, each file needs to be in a directory of the same n
 Also, to use:
 
 1. Connect the Heltecs - you need 5 cables   
-2. Power up the Heltecs   
-3. Turn on the amp   
+2. Connect power to one Heltec   
+3. Turn on the amp
 4. Wait for Heltec-Spark to pair to the amp   
 5. App-Heltec will say it has stopped waiting    
 6. Turn on your Android device   
