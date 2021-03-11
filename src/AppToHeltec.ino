@@ -6,6 +6,7 @@ HardwareSerial HWSerial(2);
 
 #define HW_BAUD 1000000
 #define PGM_NAME "App - Heltec"
+#define CONNECT_PIN 27
 
 uint8_t bt_byte, ser_byte;
 uint8_t buf[5000];
@@ -18,6 +19,7 @@ void printit(char *str) {
     Heltec.display->drawString(0, 0, PGM_NAME);
     scr_line = 1;
   }
+
   Heltec.display->drawString(0,scr_line *8, str);
   Heltec.display->display();
   scr_line++;
@@ -29,11 +31,18 @@ void setup() {
   Heltec.begin(true /*DisplayEnable Enable*/, false /*LoRa Enable*/, true /*Serial Enable*/);
   HWSerial.begin(HW_BAUD, SERIAL_8N1, 14, 12);
 
+  pinMode(CONNECT_PIN, INPUT);
+
   Heltec.display->clear();
   Heltec.display->drawString(0, 0, PGM_NAME);
   Heltec.display->display();
   scr_line = 1;
-  
+
+  printit("Waiting for other Heltec");
+  delay(1000);
+  while (digitalRead(CONNECT_PIN) == LOW);
+  printit("Other Heltec is ready");
+
   printit("Starting..");
   if (!SerialBT.begin(SPARK_BT_NAME)) 
   {

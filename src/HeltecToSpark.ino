@@ -11,6 +11,8 @@ BluetoothSerial SerialBT;
 #define SPARK_NAME "Spark 40 Audio"
 #define MY_NAME    "HeltecToSpark"
 
+#define CONNECT_PIN 27
+
 uint8_t ser_byte, bt_byte;
 bool connected;
 uint8_t buf[5000];
@@ -106,6 +108,10 @@ void setup() {
   Heltec.begin(true /*DisplayEnable Enable*/, false /*LoRa Enable*/, true /*Serial Enable*/);
   HWSerial.begin(HW_BAUD, SERIAL_8N1, 12, 14);
 
+
+  pinMode(CONNECT_PIN, OUTPUT);
+  digitalWrite(CONNECT_PIN, LOW);
+  
   Heltec.display->clear();
   Heltec.display->drawString(0, 0, PGM_NAME);
   Heltec.display->display();
@@ -113,6 +119,8 @@ void setup() {
   
   start_bt();
   connect_to_spark();
+
+  digitalWrite(CONNECT_PIN, HIGH);
 
   pos = 0;
   count = millis();
