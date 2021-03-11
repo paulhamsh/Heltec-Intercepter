@@ -1,6 +1,9 @@
 # Heltec-Intercepter
 
-See Stick Intercepter for details     
+See Stick Intercepter for details    
+
+![Spark Setups](https://github.com/paulhamsh/Stick-Intercepter/blob/main/M5Sticks.jpg)
+
 
 ```
 Connect pins  
