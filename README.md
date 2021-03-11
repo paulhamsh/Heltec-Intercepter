@@ -12,7 +12,7 @@ GND - GND
 
 27 - 27
 ```
-14 and 12 are remapped for serial traffic. 
+14 and 12 are remapped for serial traffic   
 27 to 27 is to sync between the devices
 
 Yes - connect 14 to 14 - the two programs use different pins for send and receive, so no need to cross the wires.   
